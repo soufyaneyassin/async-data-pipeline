@@ -1,1 +1,2 @@
 # async-data-pipeline
+Build a complete Python-based data extraction pipeline using the 'Books to Scrape' demo website. The project will include asynchronous scraping, image downloading, text extraction, data cleaning and analysis with pandas, and exporting the final dataset.
