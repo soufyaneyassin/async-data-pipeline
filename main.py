@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 from web_scraper.fetcher import get_categories
 from web_scraper.async_fetcher import walk_through_links
+from web_scraper.results_parser import categories_parser
 import asyncio
 
 
@@ -10,4 +11,8 @@ def main():
     url = os.getenv("WEBSITE_URL")
     links = get_categories(url)
     results = asyncio.run(walk_through_links(links))
+    categories_parser(results)
     #TO DO: after fetching each category, we should use beautiful soup to process each category, structure books data...
+
+if __name__ == "__main__":
+    main()

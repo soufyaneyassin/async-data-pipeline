@@ -15,9 +15,8 @@ def get_categories(url: str) -> List[str]:
         categories = soup.find('div', class_="side_categories").find_all('a')
 
         #extract categories links
-        links = []
-        for category in categories:
-            links.append(category.get('href'))
+        links = [f"{url}/{category.get('href')}" for category in categories]
+            
         return links
 
 
